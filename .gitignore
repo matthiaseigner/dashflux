@@ -37,3 +37,5 @@ Thumbs.db
 #json-server database
 db.json
 db.*
+
+package-lock.json

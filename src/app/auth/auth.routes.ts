@@ -5,15 +5,17 @@ import { SignupComponent } from './signup';
 
 // Define our Auth Routes
 const routes: Routes = [
-  // Temporary disable root path, while we work without Auth 
-  //{ path: '',  component: LoginComponent},
-  { path: 'login',  component: LoginComponent},
-  { path: 'signup',  component: SignupComponent },
+  // Temporary disable root path, while we work without Auth
+  // { path: '/', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {useHash: false})],
-    exports: [RouterModule],
+  imports: [
+    RouterModule.forRoot(routes, { useHash: false })
+  ],
+  exports: [RouterModule],
 })
 
 export class AuthRoutingModule { }

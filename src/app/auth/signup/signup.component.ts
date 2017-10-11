@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AuthService } from './../../common/services/auth.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   // The selector is what angular internally uses
@@ -6,16 +7,20 @@ import { Component } from '@angular/core';
   // where, in this case, selector is the string 'home'
   selector: 'signup-form',  // <home></home>
   templateUrl: './signup.component.html',
-  styleUrls: [ './signup.component.scss' ],
+  styleUrls: ['./signup.component.scss'],
   // We need to tell Angular's Dependency Injection which providers are in our app.
   providers: [
   ],
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   // Set our default values
   localState = { value: '' };
   // TypeScript public modifiers
-  constructor() {
+
+  public password: string;
+  public username: string;
+
+  constructor(public auth: AuthService) {
 
   }
 

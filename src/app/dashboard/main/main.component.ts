@@ -1,3 +1,4 @@
+import { AuthService } from './../../common/services/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   // where, in this case, selector is the string 'home'
   selector: 'dashboard-container',  // <home></home>
   templateUrl: './main.component.html',
-  styleUrls: [ './main.component.scss' ],
+  styleUrls: ['./main.component.scss'],
   // We need to tell Angular's Dependency Injection which providers are in our app.
   providers: [
   ],
@@ -15,7 +16,7 @@ export class MainDashboardComponent {
   // Set our default values
   localState = { value: '' };
   // TypeScript public modifiers
-  constructor() {
+  constructor(public auth: AuthService) {
 
   }
 

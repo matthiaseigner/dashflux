@@ -55,7 +55,10 @@ export class DeviceListComponent implements OnInit {
   ngOnInit() {
       this.service.getDevices()
                 .subscribe(
-                    devices => this.devices = devices,
+                    devices => {
+                      console.log(devices);
+                      this.devices = devices
+                    },
                     err => {
                         console.log('Error fetching devices', err);
                     });

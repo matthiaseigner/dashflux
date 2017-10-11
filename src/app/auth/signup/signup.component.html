@@ -1,6 +1,8 @@
-<div class="signup-container" layout="row">
+<div class="signup-container"
+     layout="row">
   <div flex>
-    <div layout="column" class="md-inline-form">
+    <div layout="column"
+         class="md-inline-form">
       <md-card>
         <md-card-title>SIGN UP</md-card-title>
         <md-card-content>
@@ -9,25 +11,36 @@
               <tr>
                 <td>
                   <md-input-container style="width: 100%">
-                        <input mdInput placeholder="Username" name="Username" style="width: 100%">
+                    <input mdInput
+                           placeholder="Username"
+                           name="Username"
+                           [(ngModel)]="username"
+                           style="width: 100%">
                   </md-input-container>
                 </td>
               </tr>
             </table>
             <table cellspacing="0">
-                <tr>
-                    <td>
-                        <md-input-container style="width: 100%">
-                            <input mdInput placeholder="Password" name="Password" style="width: 100%">
-                        </md-input-container>
-                    </td>
-                </tr>
+              <tr>
+                <td>
+                  <md-input-container style="width: 100%">
+                    <input mdInput
+                           placeholder="Password"
+                           name="Password"
+                           [(ngModel)]="password"
+                           style="width: 100%">
+                  </md-input-container>
+                </td>
+              </tr>
             </table>
-            <button md-raised-button color="primary" class="large-button">SIGN UP</button>
+            <button md-raised-button
+                    color="primary"
+                    (click)="auth.signup(username, password)"
+                    class="large-button">SIGN UP</button>
           </form>
-    </md-card-content>
+        </md-card-content>
         <a routerLink="/login">LOGIN</a>
-    </md-card>
-</div>
+      </md-card>
+    </div>
   </div>
 </div>

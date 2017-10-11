@@ -6,15 +6,15 @@ import { DeviceCreateComponent } from './devices/create/device-create.component'
 // Define our Auth Routes
 const routes: Routes = [
   // Temporary set /dashboard as root path
-  { path:   '',  component: MainDashboardComponent},
-  { path: 'devices/list', component: DeviceListComponent},
-  { path: 'devices/add', component: DeviceCreateComponent},
-  //{ path: 'devices/edit/:id', component: DeviceCreateComponent},
+  { path: '', redirectTo: 'devices/list', pathMatch: 'full' },
+  { path: 'devices/list', component: DeviceListComponent },
+  { path: 'devices/add', component: DeviceCreateComponent },
+  // { path: 'devices/edit/:id', component: DeviceCreateComponent},
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {useHash: false})],
-    exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
+  exports: [RouterModule],
 })
 
 export class DashboardRoutingModule { }
